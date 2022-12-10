@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/xml/tim26"
+    xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+    
+    <xs:element name="adresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ulica" type="Str255"/>
+                <xs:element name="broj" type="Str255"/>
+                <xs:element name="postanski_broj">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:positiveInteger">
+                            <xs:minInclusive value="11000"/>
+                            <xs:maxInclusive value="40000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="mesto" type="Str255"/>
+                <xs:element name="drzava" type="Str255"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="Podaci_o_licu">
+        <xs:sequence>
+            <xs:element name="telefon">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\d{3}-\d{3}-\d{2}-\d{2}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="email">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[^@]+@[^\.]+\..+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="faks" type="Str255" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:complexType abstract="true" name="Lice">
+        <xs:sequence>
+            <xs:element ref="adresa"/>
+            <xs:element name="podaci_o_licu" type="Podaci_o_licu"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Fizicko_lice">
+        <xs:complexContent>
+            <xs:extension base="Lice">
+                <xs:sequence>
+                    <xs:element name="ime" type="Str255"/>
+                    <xs:element name="prezime" type="Str255"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Fizicko_lice_sa_drzavljanstvom">
+        <xs:complexContent>
+            <xs:extension base="Fizicko_lice">
+                <xs:sequence>
+                    <xs:element name="drzavljanstvo" type="Str255"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Pravno_lice">
+        <xs:complexContent>
+            <xs:extension base="Lice">
+                <xs:sequence>
+                    <xs:element name="naziv" type="Str255"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
+    <xs:simpleType name="Str255">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="Prilog">
+        <xs:sequence>
+            <xs:element name="postoji" type="xs:boolean"/>
+            <xs:element name="putanja_do_fajla" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

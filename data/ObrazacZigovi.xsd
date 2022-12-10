@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/xml/tim26/zig"
+    xmlns:zig="http://www.ftn.uns.ac.rs/xml/tim26/zig"
+    xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26">
+    <xs:import namespace="http://www.ftn.uns.ac.rs/xml/tim26" schemaLocation="Zajednicko.xsd"/>
+    
+    <xs:element name="Obrazac_zigovi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="podnosilac_prijave" type="tim26:Lice" maxOccurs="unbounded"/>
+                <xs:element name="punomocnik" type="tim26:Lice" minOccurs="0"/>
+                <xs:element name="zajednicki_predstavnik" type="tim26:Podaci_o_licu" minOccurs="0"/>
+                <xs:element name="prijava_za_zig">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tip_ziga" type="zig:Tip_ziga"/>
+                            <xs:element name="vrsta_ziga" type="zig:Vrsta_ziga"/>
+                            <xs:element name="izgled_znaka" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="naznacenje_boja" type="xs:string"/>
+                <xs:element minOccurs="0" name="transliteracija_znaka" type="xs:string"/>
+                <xs:element minOccurs="0" name="prevod_znaka" type="xs:string"/>
+                <xs:element minOccurs="0" name="opis_znaka" type="xs:string"/>
+                <xs:element name="nicanska_klasifikacija">
+                    <xs:simpleType>
+                        <xs:restriction>
+                            <xs:simpleType>
+                                <xs:list>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:positiveInteger">
+                                            <xs:maxInclusive value="45"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:list>
+                            </xs:simpleType>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="45"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element minOccurs="0" name="zatrazeno_pravo_prvenstva_i_odnos" type="xs:string"/>
+                <xs:element name="placene_takse">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="osnovna_taksa" type="xs:decimal"/>
+                            <xs:element minOccurs="0" name="za_klase" type="xs:decimal"/>
+                            <xs:element minOccurs="0" name="za_graficko_resenje" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="prilozi_uz_zahtev">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="primerak_znaka" type="tim26:Prilog"/>
+                            <xs:element name="spisak_robe_i_usluga" type="tim26:Prilog"/>
+                            <xs:choice minOccurs="1" maxOccurs="1">
+                                <xs:element name="punomocje" type="tim26:Prilog"/>
+                                <xs:element name="generalno_punomocje_ranije_prilozeno"
+                                    type="tim26:Prilog"/>
+                                <xs:element name="punomocje_ce_biti_naknadno_dostavljeno"
+                                    type="tim26:Prilog"/>
+                            </xs:choice>
+                            <xs:element name="opsti_akt_o_kolektivnom_zigu" type="tim26:Prilog"/>
+                            <xs:element name="dokaz_o_pravu_prvenstva" type="tim26:Prilog"/>
+                            <xs:element name="dokaz_o_uplati_takse" type="tim26:Prilog"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="zig:Broj_prijave_ziga" use="required"/>
+            <xs:attribute ref="zig:Datum_podnosenja" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="Tip_ziga">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="individualni_zig"/>
+            <xs:enumeration value="kolektivni_zig"/>
+            <xs:enumeration value="zig_garancije"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Odredjena_vrsta_ziga">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="verbalni_znak"/>
+            <xs:enumeration value="graficki_znak"/>
+            <xs:enumeration value="kombinovani_znak"/>
+            <xs:enumeration value="trodimenzionalni_znak"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType final="" name="Vrsta_ziga">
+        <xs:union memberTypes="tim26:Str255 zig:Odredjena_vrsta_ziga"/>
+    </xs:simpleType>
+
+    <xs:attribute name="Broj_prijave_ziga">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="Ž-\d+\\\d{2}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="Datum_podnosenja" type="xs:date"/>
+</xs:schema>

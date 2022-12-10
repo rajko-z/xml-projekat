@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Obrazac_autori xmlns="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1 ObrazacAutori.xsd http://www.ftn.uns.ac.rs/xml/tim26 Zajednicko.xsd"
+    xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1"
+    xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26"
+    a1:Broj_prijave="A-432"
+    a1:Datum_podnosenja="2022-12-10">
+    
+    <podnosilac xsi:type="tim26:Fizicko_lice_sa_drzavljanstvom">
+        <adresa xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+            <ulica>Neka ulica</ulica>
+            <broj>23A</broj>
+            <postanski_broj>12000</postanski_broj>
+            <mesto>Negde</mesto>
+            <drzava>Srbija</drzava>
+        </adresa>
+        <podaci_o_licu xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+            <telefon>065-232-11-11</telefon>
+            <email>test@gmail.com</email>
+        </podaci_o_licu>
+        <tim26:ime>Neko</tim26:ime>
+        <tim26:prezime>Neko</tim26:prezime>
+        <tim26:drzavljanstvo>Srpsko</tim26:drzavljanstvo>
+    </podnosilac>
+    <naslov_autorskog_dela>naslov</naslov_autorskog_dela>
+    <vrsta_autorskog_dela>vrsta</vrsta_autorskog_dela>
+    <forma_zapisa>forma</forma_zapisa>
+    <dodatni_podaci_ako_podnosical_nije_autor>
+        <autor>
+            <tim26:adresa>
+                <tim26:ulica>a</tim26:ulica>
+                <tim26:broj>a</tim26:broj>
+                <tim26:postanski_broj>11000</tim26:postanski_broj>
+                <tim26:mesto>a</tim26:mesto>
+                <tim26:drzava>a</tim26:drzava>
+            </tim26:adresa>
+            <tim26:podaci_o_licu>
+                <tim26:telefon>434-433-34-34</tim26:telefon>
+                <tim26:email>nesto@gmail.com</tim26:email>
+            </tim26:podaci_o_licu>
+            <tim26:ime>Autor1</tim26:ime>
+            <tim26:prezime>Autor1</tim26:prezime>
+            <tim26:drzavljanstvo>Sprsko</tim26:drzavljanstvo>
+        </autor>
+        <autor>
+            <tim26:adresa>
+                <tim26:ulica>a</tim26:ulica>
+                <tim26:broj>a</tim26:broj>
+                <tim26:postanski_broj>11000</tim26:postanski_broj>
+                <tim26:mesto>a</tim26:mesto>
+                <tim26:drzava>a</tim26:drzava>
+            </tim26:adresa>
+            <tim26:podaci_o_licu>
+                <tim26:telefon>434-433-34-34</tim26:telefon>
+                <tim26:email>nesto@gmail.com</tim26:email>
+            </tim26:podaci_o_licu>
+            <tim26:ime>Autor2</tim26:ime>
+            <tim26:prezime>Autor2</tim26:prezime>
+            <tim26:drzavljanstvo>Sprsko</tim26:drzavljanstvo>
+        </autor>
+        <preminuli_autor>
+            <Ime>Autor3</Ime>
+            <Prezime>Autor3</Prezime>
+            <Godina_smrti>2012</Godina_smrti>
+        </preminuli_autor>
+    </dodatni_podaci_ako_podnosical_nije_autor>
+    <prilozi>
+        <opis_autorskog_dela>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </opis_autorskog_dela>
+        <primer_autorskog_dela>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </primer_autorskog_dela>
+    </prilozi>
+</Obrazac_autori>

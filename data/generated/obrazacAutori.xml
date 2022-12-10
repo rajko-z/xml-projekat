@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<a1:Obrazac_autori xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26" xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1" xmlns:zig="http://www.ftn.uns.ac.rs/xml/tim26/zig" a1:Datum_podnosenja="2022-12-10" a1:Broj_prijave="A-432">
+    <a1:podnosilac xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tim26:Fizicko_lice_sa_drzavljanstvom">
+        <tim26:adresa>
+            <tim26:ulica>Neka ulica</tim26:ulica>
+            <tim26:broj>23A</tim26:broj>
+            <tim26:postanski_broj>12000</tim26:postanski_broj>
+            <tim26:mesto>Negde</tim26:mesto>
+            <tim26:drzava>Srbija</tim26:drzava>
+        </tim26:adresa>
+        <tim26:podaci_o_licu>
+            <tim26:telefon>065-232-11-11</tim26:telefon>
+            <tim26:email>test@gmail.com</tim26:email>
+        </tim26:podaci_o_licu>
+        <tim26:ime>Neko</tim26:ime>
+        <tim26:prezime>Neko</tim26:prezime>
+        <tim26:drzavljanstvo>Srpsko</tim26:drzavljanstvo>
+    </a1:podnosilac>
+    <a1:podnosilac xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tim26:Fizicko_lice_sa_drzavljanstvom">
+        <tim26:adresa>
+            <tim26:ulica>Nova ulica</tim26:ulica>
+            <tim26:broj>21A</tim26:broj>
+            <tim26:postanski_broj>22000</tim26:postanski_broj>
+            <tim26:mesto>Neko mesto</tim26:mesto>
+            <tim26:drzava>Srbija</tim26:drzava>
+        </tim26:adresa>
+        <tim26:podaci_o_licu>
+            <tim26:telefon>065-314-23-23</tim26:telefon>
+            <tim26:email>pera@gmail.com</tim26:email>
+        </tim26:podaci_o_licu>
+        <tim26:ime>Pera</tim26:ime>
+        <tim26:prezime>Peric</tim26:prezime>
+        <tim26:drzavljanstvo>Sprsko</tim26:drzavljanstvo>
+    </a1:podnosilac>
+    <a1:naslov_autorskog_dela>naslov</a1:naslov_autorskog_dela>
+    <a1:vrsta_autorskog_dela>vrsta</a1:vrsta_autorskog_dela>
+    <a1:forma_zapisa>forma</a1:forma_zapisa>
+    <a1:dodatni_podaci_ako_podnosical_nije_autor>
+        <a1:autor>
+            <tim26:adresa>
+                <tim26:ulica>a</tim26:ulica>
+                <tim26:broj>a</tim26:broj>
+                <tim26:postanski_broj>11000</tim26:postanski_broj>
+                <tim26:mesto>a</tim26:mesto>
+                <tim26:drzava>a</tim26:drzava>
+            </tim26:adresa>
+            <tim26:podaci_o_licu>
+                <tim26:telefon>434-433-34-34</tim26:telefon>
+                <tim26:email>nesto@gmail.com</tim26:email>
+            </tim26:podaci_o_licu>
+            <tim26:ime>Autor1</tim26:ime>
+            <tim26:prezime>Autor1</tim26:prezime>
+            <tim26:drzavljanstvo>Sprsko</tim26:drzavljanstvo>
+        </a1:autor>
+        <a1:autor>
+            <tim26:adresa>
+                <tim26:ulica>a</tim26:ulica>
+                <tim26:broj>a</tim26:broj>
+                <tim26:postanski_broj>11000</tim26:postanski_broj>
+                <tim26:mesto>a</tim26:mesto>
+                <tim26:drzava>a</tim26:drzava>
+            </tim26:adresa>
+            <tim26:podaci_o_licu>
+                <tim26:telefon>434-433-34-34</tim26:telefon>
+                <tim26:email>nesto@gmail.com</tim26:email>
+            </tim26:podaci_o_licu>
+            <tim26:ime>Autor2</tim26:ime>
+            <tim26:prezime>Autor2</tim26:prezime>
+            <tim26:drzavljanstvo>Sprsko</tim26:drzavljanstvo>
+        </a1:autor>
+        <a1:preminuli_autor>
+            <a1:Ime>Autor3</a1:Ime>
+            <a1:Prezime>Autor3</a1:Prezime>
+            <a1:Godina_smrti>2012</a1:Godina_smrti>
+        </a1:preminuli_autor>
+    </a1:dodatni_podaci_ako_podnosical_nije_autor>
+    <a1:stvoreno_u_radnom_odnosu>true</a1:stvoreno_u_radnom_odnosu>
+    <a1:nacin_koriscenja>izdato</a1:nacin_koriscenja>
+    <a1:prilozi>
+        <a1:opis_autorskog_dela>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </a1:opis_autorskog_dela>
+        <a1:primer_autorskog_dela>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </a1:primer_autorskog_dela>
+    </a1:prilozi>
+</a1:Obrazac_autori>

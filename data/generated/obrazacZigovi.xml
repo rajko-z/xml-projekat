@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zig:Obrazac_zigovi xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26" xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1" xmlns:zig="http://www.ftn.uns.ac.rs/xml/tim26/zig" zig:Broj_prijave_ziga="Ž-324\22" zig:Datum_podnosenja="2022-09-20">
+    <zig:podnosilac_prijave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tim26:Fizicko_lice">
+        <tim26:adresa>
+            <tim26:ulica>Neka Ulica</tim26:ulica>
+            <tim26:broj>2</tim26:broj>
+            <tim26:postanski_broj>20000</tim26:postanski_broj>
+            <tim26:mesto>Novi Sad</tim26:mesto>
+            <tim26:drzava>Srbija</tim26:drzava>
+        </tim26:adresa>
+        <tim26:podaci_o_licu>
+            <tim26:telefon>065-312-23-23</tim26:telefon>
+            <tim26:email>test@gmail.com</tim26:email>
+        </tim26:podaci_o_licu>
+        <tim26:ime>Ime</tim26:ime>
+        <tim26:prezime>Prezime</tim26:prezime>
+    </zig:podnosilac_prijave>
+    <zig:podnosilac_prijave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tim26:Fizicko_lice">
+        <tim26:adresa>
+            <tim26:ulica>Nova ulica</tim26:ulica>
+            <tim26:broj>21A</tim26:broj>
+            <tim26:postanski_broj>22000</tim26:postanski_broj>
+            <tim26:mesto>Neko mesto</tim26:mesto>
+            <tim26:drzava>Srbija</tim26:drzava>
+        </tim26:adresa>
+        <tim26:podaci_o_licu>
+            <tim26:telefon>065-314-23-23</tim26:telefon>
+            <tim26:email>pera@gmail.com</tim26:email>
+        </tim26:podaci_o_licu>
+        <tim26:ime>Pera</tim26:ime>
+        <tim26:prezime>Peric</tim26:prezime>
+    </zig:podnosilac_prijave>
+    <zig:prijava_za_zig>
+        <zig:tip_ziga>zig_garancije</zig:tip_ziga>
+        <zig:vrsta_ziga>verbalni_znak</zig:vrsta_ziga>
+        <zig:izgled_znaka>izgled znaka</zig:izgled_znaka>
+    </zig:prijava_za_zig>
+    <zig:naznacenje_boja>plava, zuta, zelana</zig:naznacenje_boja>
+    <zig:nicanska_klasifikacija>1 5 8</zig:nicanska_klasifikacija>
+    <zig:zatrazeno_pravo_prvenstva_i_odnos>zatrazeno pravo...</zig:zatrazeno_pravo_prvenstva_i_odnos>
+    <zig:placene_takse>
+        <zig:osnovna_taksa>434.34</zig:osnovna_taksa>
+    </zig:placene_takse>
+    <zig:prilozi_uz_zahtev>
+        <zig:primerak_znaka>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla>/test</tim26:putanja_do_fajla>
+        </zig:primerak_znaka>
+        <zig:spisak_robe_i_usluga>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla>neka putanja</tim26:putanja_do_fajla>
+        </zig:spisak_robe_i_usluga>
+        <zig:punomocje>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </zig:punomocje>
+        <zig:opsti_akt_o_kolektivnom_zigu>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </zig:opsti_akt_o_kolektivnom_zigu>
+        <zig:dokaz_o_pravu_prvenstva>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </zig:dokaz_o_pravu_prvenstva>
+        <zig:dokaz_o_uplati_takse>
+            <tim26:postoji>true</tim26:postoji>
+            <tim26:putanja_do_fajla></tim26:putanja_do_fajla>
+        </zig:dokaz_o_uplati_takse>
+    </zig:prilozi_uz_zahtev>
+</zig:Obrazac_zigovi>

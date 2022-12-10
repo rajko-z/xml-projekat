@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1"
+    xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1"
+    xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26">
+    <xs:import namespace="http://www.ftn.uns.ac.rs/xml/tim26" schemaLocation="Zajednicko.xsd"/>
+
+    <xs:element name="Obrazac_autori">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="podnosilac" type="tim26:Lice" maxOccurs="unbounded"/>
+                <xs:element name="pseudonim" minOccurs="0" type="xs:string"/>
+                <xs:element minOccurs="0" name="Punomocnik" type="tim26:Lice"/>
+                <xs:element name="naslov_autorskog_dela" type="xs:string"/>
+                <xs:element minOccurs="0" name="podaci_o_izvornom_delu" type="xs:string"/>
+                <xs:element name="vrsta_autorskog_dela" type="xs:string"/>
+                <xs:element name="forma_zapisa" type="xs:string"/>
+                <xs:element minOccurs="0" name="dodatni_podaci_ako_podnosical_nije_autor">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:sequence>
+                                <xs:sequence minOccurs="1">
+                                    <xs:element maxOccurs="unbounded" minOccurs="0" name="autor"
+                                        type="tim26:Fizicko_lice_sa_drzavljanstvom"/>
+                                </xs:sequence>
+                                <xs:sequence minOccurs="1">
+                                    <xs:element maxOccurs="unbounded" minOccurs="0"
+                                        name="preminuli_autor" type="a1:Preminuo_autor"/>
+                                </xs:sequence>
+                            </xs:sequence>
+                            <xs:element default="true" name="rad_je_anoniman">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:boolean">
+                                        <xs:pattern value="true"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="stvoreno_u_radnom_odnosu" type="xs:boolean"/>
+                <xs:element minOccurs="0" name="nacin_koriscenja" type="xs:string"/>
+                <xs:element name="prilozi">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="1" name="opis_autorskog_dela" type="tim26:Prilog"/>
+                            <xs:element minOccurs="1" name="primer_autorskog_dela"
+                                type="tim26:Prilog"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="a1:Datum_podnosenja" use="required"/>
+            <xs:attribute ref="a1:Broj_prijave" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="Broj_prijave">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="A-\d+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="Datum_podnosenja" type="xs:date"/>
+    <xs:complexType name="Preminuo_autor">
+        <xs:sequence>
+            <xs:element name="Ime" type="tim26:Str255"/>
+            <xs:element name="Prezime" type="tim26:Str255"/>
+            <xs:element name="Godina_smrti" type="xs:gYear"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
