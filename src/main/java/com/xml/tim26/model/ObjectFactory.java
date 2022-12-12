@@ -30,43 +30,108 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObrazacAutori }
+     * Create an instance of {@link ObrazacPatenti }
      * 
      */
+    public ObrazacPatenti createObrazacPatenti() {
+        return new ObrazacPatenti();
+    }
+
     public ObrazacAutori createObrazacAutori() {
         return new ObrazacAutori();
-    }
 
-    /**
-     * Create an instance of {@link ObrazacZigovi }
-     * 
-     */
+    }
     public ObrazacZigovi createObrazacZigovi() {
-        return new ObrazacZigovi();
-    }
-
-    /**
-     * Create an instance of {@link ObrazacAutori.DodatniPodaciAkoPodnosicalNijeAutor }
-     * 
-     */
+        return new ObrazacZigovi();}
     public ObrazacAutori.DodatniPodaciAkoPodnosicalNijeAutor createObrazacAutoriDodatniPodaciAkoPodnosicalNijeAutor() {
-        return new ObrazacAutori.DodatniPodaciAkoPodnosicalNijeAutor();
-    }
+        return new ObrazacAutori.DodatniPodaciAkoPodnosicalNijeAutor();}
 
-    /**
-     * Create an instance of {@link ObrazacAutori.Prilozi }
-     * 
-     */
+
     public ObrazacAutori.Prilozi createObrazacAutoriPrilozi() {
         return new ObrazacAutori.Prilozi();
     }
 
+    public ObrazacZigovi.PrijavaZaZig createObrazacZigoviPrijavaZaZig() {
+        return new ObrazacZigovi.PrijavaZaZig();
+    }
+
+    public ObrazacZigovi.PlaceneTakse createObrazacZigoviPlaceneTakse() {
+        return new ObrazacZigovi.PlaceneTakse();
+    }
+
+    public ObrazacZigovi.PriloziUzZahtev createObrazacZigoviPriloziUzZahtev() {
+        return new ObrazacZigovi.PriloziUzZahtev();
+    }
     /**
-     * Create an instance of {@link PreminuoAutor }
+     * Create an instance of {@link ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih }
      * 
      */
-    public PreminuoAutor createPreminuoAutor() {
-        return new PreminuoAutor();
+    public ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih createObrazacPatentiZahtevZaPriznavanjePrvenstvaRanijih() {
+        return new ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih();
+    }
+
+    /**
+     * Create an instance of {@link ObrazacPatenti.PopunjavaPodnosilac }
+     * 
+     */
+    public ObrazacPatenti.PopunjavaPodnosilac createObrazacPatentiPopunjavaPodnosilac() {
+        return new ObrazacPatenti.PopunjavaPodnosilac();
+    }
+
+    /**
+     * Create an instance of {@link ObrazacPatenti.PopunjavaZavod }
+     * 
+     */
+    public ObrazacPatenti.PopunjavaZavod createObrazacPatentiPopunjavaZavod() {
+        return new ObrazacPatenti.PopunjavaZavod();
+    }
+
+    /**
+     * Create an instance of {@link ObrazacPatenti.InformacijeInstitucije }
+     * 
+     */
+    public ObrazacPatenti.InformacijeInstitucije createObrazacPatentiInformacijeInstitucije() {
+        return new ObrazacPatenti.InformacijeInstitucije();
+    }
+
+    /**
+     * Create an instance of {@link Pronalazac }
+     * 
+     */
+    public Pronalazac createPronalazac() {
+        return new Pronalazac();
+    }
+
+    /**
+     * Create an instance of {@link Punomocnik }
+     * 
+     */
+    public Punomocnik createPunomocnik() {
+        return new Punomocnik();
+    }
+
+    /**
+     * Create an instance of {@link ObrazacPatenti.Dostavljanje }
+     * 
+     */
+    public ObrazacPatenti.Dostavljanje createObrazacPatentiDostavljanje() {
+        return new ObrazacPatenti.Dostavljanje();
+    }
+
+    /**
+     * Create an instance of {@link Prijava }
+     * 
+     */
+    public Prijava createPrijava() {
+        return new Prijava();
+    }
+
+    /**
+     * Create an instance of {@link PodnosilacPrijave }
+     * 
+     */
+    public PodnosilacPrijave createPodnosilacPrijave() {
+        return new PodnosilacPrijave();
     }
 
     /**
@@ -118,27 +183,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObrazacZigovi.PrijavaZaZig }
+     * Create an instance of {@link ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava }
      * 
      */
-    public ObrazacZigovi.PrijavaZaZig createObrazacZigoviPrijavaZaZig() {
-        return new ObrazacZigovi.PrijavaZaZig();
+    public ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava createObrazacPatentiZahtevZaPriznavanjePrvenstvaRanijihRanijaPrijava() {
+        return new ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava();
     }
 
     /**
-     * Create an instance of {@link ObrazacZigovi.PlaceneTakse }
+     * Create an instance of {@link ObrazacPatenti.PopunjavaPodnosilac.NazivPronalazka }
      * 
      */
-    public ObrazacZigovi.PlaceneTakse createObrazacZigoviPlaceneTakse() {
-        return new ObrazacZigovi.PlaceneTakse();
-    }
-
-    /**
-     * Create an instance of {@link ObrazacZigovi.PriloziUzZahtev }
-     * 
-     */
-    public ObrazacZigovi.PriloziUzZahtev createObrazacZigoviPriloziUzZahtev() {
-        return new ObrazacZigovi.PriloziUzZahtev();
+    public ObrazacPatenti.PopunjavaPodnosilac.NazivPronalazka createObrazacPatentiPopunjavaPodnosilacNazivPronalazka() {
+        return new ObrazacPatenti.PopunjavaPodnosilac.NazivPronalazka();
     }
 
 }

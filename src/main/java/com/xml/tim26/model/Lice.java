@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
     "podaciOLicu"
 })
 @XmlSeeAlso({
+    Punomocnik.class,
     FizickoLice.class,
     PravnoLice.class
 })
@@ -91,4 +92,5 @@ public abstract class Lice {
     public void setPodaciOLicu(PodaciOLicu value) {
         this.podaciOLicu = value;
     }
+
 }

@@ -95,9 +95,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="Adresa">
-        <xs:sequence>
-            <xs:element ref="adresa"/>
-        </xs:sequence>
-    </xs:complexType>
+<!--    <xs:complexType name="Adresa">-->
+<!--        <xs:sequence>-->
+<!--            <xs:element ref="adresa"/>-->
+<!--        </xs:sequence>-->
+<!--    </xs:complexType>-->
 </xs:schema>

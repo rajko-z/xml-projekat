@@ -25,7 +25,7 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Adresa" type="tim26:Adresa"/>
+                            <xs:element ref="tim26:adresa"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -62,8 +62,7 @@
                 <xs:element name="Dostavljanje">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element minOccurs="0" name="Adresa_za_dostavljanje"
-                                type="tim26:Adresa"/>
+                            <xs:element minOccurs="0" ref="tim26:adresa"/>
                             <xs:element name="Nacin_dostavljanja">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">

@@ -7,16 +7,14 @@
     <p1:Priznati_datum_podnosenja>2014-09-19</p1:Priznati_datum_podnosenja>
   </p1:Popunjava_zavod>
   <p1:Informacije_institucije>
-    <p1:Naziv>neki</p1:Naziv>
-    <p1:Adresa>
-      <tim:adresa>
-        <tim:ulica>neka</tim:ulica>
-        <tim:broj>23</tim:broj>
-        <tim:postanski_broj>11000</tim:postanski_broj>
-        <tim:mesto>neko</tim:mesto>
-        <tim:drzava>string</tim:drzava>
-      </tim:adresa>
-    </p1:Adresa>
+    <p1:Naziv>string</p1:Naziv>
+    <tim:adresa>
+      <tim:ulica>string</tim:ulica>
+      <tim:broj>string</tim:broj>
+      <tim:postanski_broj>11000</tim:postanski_broj>
+      <tim:mesto>string</tim:mesto>
+      <tim:drzava>string</tim:drzava>
+    </tim:adresa>
   </p1:Informacije_institucije>
   <!--1 or more repetitions:-->
   <p1:Popunjava_podnosilac>
@@ -36,8 +34,8 @@
           <tim:drzava>string</tim:drzava>
         </tim:adresa>
         <tim:podaci_o_licu>
-          <tim:telefon>323-323-32-32</tim:telefon>
-          <tim:email>stri@gmail.com</tim:email>
+          <tim:telefon>324-432-32-32</tim:telefon>
+          <tim:email>str@in.g</tim:email>
           <!--Optional:-->
           <tim:faks>string</tim:faks>
         </tim:podaci_o_licu>
@@ -59,8 +57,8 @@
         <tim:drzava>string</tim:drzava>
       </tim:adresa>
       <tim:podaci_o_licu>
-        <tim:telefon>323-532-32-32</tim:telefon>
-        <tim:email>stri@gmail.com</tim:email>
+        <tim:telefon>432-432-53-56</tim:telefon>
+        <tim:email>st@ri.ng</tim:email>
         <!--Optional:-->
         <tim:faks>string</tim:faks>
       </tim:podaci_o_licu>
@@ -77,8 +75,8 @@
       <tim:drzava>string</tim:drzava>
     </tim:adresa>
     <tim:podaci_o_licu>
-      <tim:telefon>323-532-32-32</tim:telefon>
-      <tim:email>stri@gmail.com</tim:email>
+      <tim:telefon>344-646-43-64</tim:telefon>
+      <tim:email>neka@nes.com</tim:email>
       <!--Optional:-->
       <tim:faks>string</tim:faks>
     </tim:podaci_o_licu>
@@ -88,15 +86,13 @@
   </p1:Punomocnik>
   <p1:Dostavljanje>
     <!--Optional:-->
-    <p1:Adresa_za_dostavljanje>
-      <tim:adresa>
-        <tim:ulica>string</tim:ulica>
-        <tim:broj>string</tim:broj>
-        <tim:postanski_broj>11000</tim:postanski_broj>
-        <tim:mesto>string</tim:mesto>
-        <tim:drzava>string</tim:drzava>
-      </tim:adresa>
-    </p1:Adresa_za_dostavljanje>
+    <tim:adresa>
+      <tim:ulica>string</tim:ulica>
+      <tim:broj>string</tim:broj>
+      <tim:postanski_broj>11000</tim:postanski_broj>
+      <tim:mesto>string</tim:mesto>
+      <tim:drzava>string</tim:drzava>
+    </tim:adresa>
     <p1:Nacin_dostavljanja>ELEKTRONSKI</p1:Nacin_dostavljanja>
   </p1:Dostavljanje>
   <!--Optional:-->
@@ -111,7 +107,7 @@
         <p1:Datum_podnosenja_prijave>2012-09-13+02:00</p1:Datum_podnosenja_prijave>
         <p1:Broj_prijave>201</p1:Broj_prijave>
       </p1:Prijava>
-      <p1:Oznaka_organizacije>JD</p1:Oznaka_organizacije>
+      <p1:Oznaka_organizacije>SE</p1:Oznaka_organizacije>
     </p1:Ranija_prijava>
   </p1:Zahtev_za_priznavanje_prvenstva_ranijih>
 </p1:Obrazac_patenti>

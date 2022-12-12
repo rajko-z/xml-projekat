@@ -1,6 +1,7 @@
 package com.xml.tim26.service;
 
 import com.xml.tim26.model.ObrazacAutori;
+import com.xml.tim26.model.ObrazacPatenti;
 import com.xml.tim26.model.ObrazacZigovi;
 
 import javax.xml.bind.JAXBContext;
@@ -18,6 +19,9 @@ public class UnmarshallingXMLService {
 
     public static ObrazacAutori getObrazacAutoriFromXml(String filePath) throws JAXBException {
         return (ObrazacAutori) getUnmarshaller().unmarshal(new File(filePath));
+    }
+    public static ObrazacPatenti getObrazacPatentFromXml(String filePath) throws JAXBException {
+        return (ObrazacPatenti) getUnmarshaller().unmarshal(new File(filePath));
     }
 
     private static Unmarshaller getUnmarshaller() throws JAXBException {

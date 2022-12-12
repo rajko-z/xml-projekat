@@ -1,6 +1,7 @@
 package com.xml.tim26.service;
 
 import com.xml.tim26.model.ObrazacAutori;
+import com.xml.tim26.model.ObrazacPatenti;
 import com.xml.tim26.model.ObrazacZigovi;
 import com.xml.tim26.util.NSPrefixMapper;
 
@@ -19,6 +20,9 @@ public class MarshallingXMLService {
 
     public static void saveObrazacAutoriToXml(ObrazacAutori obrazacAutori, String filePath) throws JAXBException {
         getMarshaller().marshal(obrazacAutori, new File(filePath));
+    }
+    public static void saveObrazacPatentToXml(ObrazacPatenti obrazacPatenti, String filePath) throws JAXBException {
+        getMarshaller().marshal(obrazacPatenti, new File(filePath));
     }
 
     private static Marshaller getMarshaller() throws JAXBException {
