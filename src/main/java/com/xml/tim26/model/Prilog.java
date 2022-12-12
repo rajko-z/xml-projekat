@@ -79,12 +79,4 @@ public class Prilog {
         this.putanjaDoFajla = value;
     }
 
-
-    @Override
-    public String toString() {
-        return "Prilog{" +
-                "postoji=" + postoji +
-                ", putanjaDoFajla='" + putanjaDoFajla + '\'' +
-                '}';
-    }
 }

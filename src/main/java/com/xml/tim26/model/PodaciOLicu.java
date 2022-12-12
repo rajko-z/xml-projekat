@@ -127,12 +127,4 @@ public class PodaciOLicu {
         this.faks = value;
     }
 
-    @Override
-    public String toString() {
-        return "PodaciOLicu{" +
-                "telefon='" + telefon + '\'' +
-                ", email='" + email + '\'' +
-                ", faks='" + faks + '\'' +
-                '}';
-    }
 }

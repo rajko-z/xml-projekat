@@ -102,5 +102,4 @@ public class FizickoLice
                 ", podaciOLicu=" + podaciOLicu +
                 '}';
     }
-
 }

@@ -31,10 +31,11 @@ public class TestingPatenti {
         a1.setPostanskiBroj(22000);
         a1.setMesto("Neko mesto");
 
-        Punomocnik p = obrazacPatenti.getPunomocnik();
+        Punomocnik p = obrazacPatenti.getPopunjavaPodnosilac().getPunomocnik();
         p.setAdresa(a1);
+        obrazacPatenti.getPopunjavaPodnosilac().setPunomocnik(p);
 
-        obrazacPatenti.setPunomocnik(p);
+
 
     }
 

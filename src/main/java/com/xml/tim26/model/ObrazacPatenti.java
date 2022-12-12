@@ -52,7 +52,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *             &lt;/complexContent>
  *           &lt;/complexType>
  *         &lt;/element>
- *         &lt;element name="Popunjava_podnosilac" maxOccurs="unbounded">
+ *         &lt;element name="Popunjava_podnosilac">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -81,51 +81,51 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                       &lt;/complexContent>
  *                     &lt;/complexType>
  *                   &lt;/element>
- *                   &lt;element name="Podnosilac_prijave" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Podnosilac_prijave"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Pronalazac" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Pronalazac" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Punomocnik" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Punomocnik"/>
- *         &lt;element name="Dostavljanje">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element ref="{http://www.ftn.uns.ac.rs/xml/tim26}adresa" minOccurs="0"/>
- *                   &lt;element name="Nacin_dostavljanja">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;enumeration value="ELEKTRONSKI"/>
- *                         &lt;enumeration value="FIZICKI"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Osnovna_prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava" minOccurs="0"/>
- *         &lt;element name="Zahtev_za_priznavanje_prvenstva_ranijih">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Ranija_prijava" maxOccurs="unbounded" minOccurs="0">
+ *                   &lt;element name="Podnosilac_prijave" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Podnosilac_prijave" maxOccurs="unbounded"/>
+ *                   &lt;element name="Pronalazac" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Pronalazac" maxOccurs="unbounded" minOccurs="0"/>
+ *                   &lt;element name="Punomocnik" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Punomocnik"/>
+ *                   &lt;element name="Dostavljanje">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                           &lt;sequence>
- *                             &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
- *                             &lt;element name="Oznaka_organizacije">
+ *                             &lt;element ref="{http://www.ftn.uns.ac.rs/xml/tim26}adresa" minOccurs="0"/>
+ *                             &lt;element name="Nacin_dostavljanja">
  *                               &lt;simpleType>
  *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;pattern value="[A-Z]{2}"/>
+ *                                   &lt;enumeration value="ELEKTRONSKI"/>
+ *                                   &lt;enumeration value="FIZICKI"/>
  *                                 &lt;/restriction>
  *                               &lt;/simpleType>
+ *                             &lt;/element>
+ *                           &lt;/sequence>
+ *                         &lt;/restriction>
+ *                       &lt;/complexContent>
+ *                     &lt;/complexType>
+ *                   &lt;/element>
+ *                   &lt;element name="Osnovna_prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava" minOccurs="0"/>
+ *                   &lt;element name="Zahtev_za_priznavanje_prvenstva_ranijih">
+ *                     &lt;complexType>
+ *                       &lt;complexContent>
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                           &lt;sequence>
+ *                             &lt;element name="Ranija_prijava" maxOccurs="unbounded" minOccurs="0">
+ *                               &lt;complexType>
+ *                                 &lt;complexContent>
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                                     &lt;sequence>
+ *                                       &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
+ *                                       &lt;element name="Oznaka_organizacije">
+ *                                         &lt;simpleType>
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *                                             &lt;pattern value="[A-Z]{2}"/>
+ *                                           &lt;/restriction>
+ *                                         &lt;/simpleType>
+ *                                       &lt;/element>
+ *                                     &lt;/sequence>
+ *                                   &lt;/restriction>
+ *                                 &lt;/complexContent>
+ *                               &lt;/complexType>
  *                             &lt;/element>
  *                           &lt;/sequence>
  *                         &lt;/restriction>
@@ -149,12 +149,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "", propOrder = {
     "popunjavaZavod",
     "informacijeInstitucije",
-    "popunjavaPodnosilac",
-    "pronalazac",
-    "punomocnik",
-    "dostavljanje",
-    "osnovnaPrijava",
-    "zahtevZaPriznavanjePrvenstvaRanijih"
+    "popunjavaPodnosilac"
 })
 @XmlRootElement(name = "Obrazac_patenti", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
 public class ObrazacPatenti {
@@ -164,17 +159,7 @@ public class ObrazacPatenti {
     @XmlElement(name = "Informacije_institucije", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
     protected ObrazacPatenti.InformacijeInstitucije informacijeInstitucije;
     @XmlElement(name = "Popunjava_podnosilac", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-    protected List<ObrazacPatenti.PopunjavaPodnosilac> popunjavaPodnosilac;
-    @XmlElement(name = "Pronalazac", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
-    protected List<Pronalazac> pronalazac;
-    @XmlElement(name = "Punomocnik", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-    protected Punomocnik punomocnik;
-    @XmlElement(name = "Dostavljanje", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-    protected ObrazacPatenti.Dostavljanje dostavljanje;
-    @XmlElement(name = "Osnovna_prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
-    protected Prijava osnovnaPrijava;
-    @XmlElement(name = "Zahtev_za_priznavanje_prvenstva_ranijih", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-    protected ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih zahtevZaPriznavanjePrvenstvaRanijih;
+    protected ObrazacPatenti.PopunjavaPodnosilac popunjavaPodnosilac;
 
     /**
      * Gets the value of the popunjavaZavod property.
@@ -227,245 +212,25 @@ public class ObrazacPatenti {
     /**
      * Gets the value of the popunjavaPodnosilac property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the popunjavaPodnosilac property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPopunjavaPodnosilac().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ObrazacPatenti.PopunjavaPodnosilac }
-     * 
-     * 
-     */
-    public List<ObrazacPatenti.PopunjavaPodnosilac> getPopunjavaPodnosilac() {
-        if (popunjavaPodnosilac == null) {
-            popunjavaPodnosilac = new ArrayList<ObrazacPatenti.PopunjavaPodnosilac>();
-        }
-        return this.popunjavaPodnosilac;
-    }
-
-    /**
-     * Gets the value of the pronalazac property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pronalazac property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPronalazac().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Pronalazac }
-     * 
-     * 
-     */
-    public List<Pronalazac> getPronalazac() {
-        if (pronalazac == null) {
-            pronalazac = new ArrayList<Pronalazac>();
-        }
-        return this.pronalazac;
-    }
-
-    /**
-     * Gets the value of the punomocnik property.
-     * 
      * @return
      *     possible object is
-     *     {@link Punomocnik }
+     *     {@link ObrazacPatenti.PopunjavaPodnosilac }
      *     
      */
-    public Punomocnik getPunomocnik() {
-        return punomocnik;
+    public ObrazacPatenti.PopunjavaPodnosilac getPopunjavaPodnosilac() {
+        return popunjavaPodnosilac;
     }
 
     /**
-     * Sets the value of the punomocnik property.
+     * Sets the value of the popunjavaPodnosilac property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Punomocnik }
+     *     {@link ObrazacPatenti.PopunjavaPodnosilac }
      *     
      */
-    public void setPunomocnik(Punomocnik value) {
-        this.punomocnik = value;
-    }
-
-    /**
-     * Gets the value of the dostavljanje property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ObrazacPatenti.Dostavljanje }
-     *     
-     */
-    public ObrazacPatenti.Dostavljanje getDostavljanje() {
-        return dostavljanje;
-    }
-
-    /**
-     * Sets the value of the dostavljanje property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ObrazacPatenti.Dostavljanje }
-     *     
-     */
-    public void setDostavljanje(ObrazacPatenti.Dostavljanje value) {
-        this.dostavljanje = value;
-    }
-
-    /**
-     * Gets the value of the osnovnaPrijava property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Prijava }
-     *     
-     */
-    public Prijava getOsnovnaPrijava() {
-        return osnovnaPrijava;
-    }
-
-    /**
-     * Sets the value of the osnovnaPrijava property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Prijava }
-     *     
-     */
-    public void setOsnovnaPrijava(Prijava value) {
-        this.osnovnaPrijava = value;
-    }
-
-    /**
-     * Gets the value of the zahtevZaPriznavanjePrvenstvaRanijih property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih }
-     *     
-     */
-    public ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih getZahtevZaPriznavanjePrvenstvaRanijih() {
-        return zahtevZaPriznavanjePrvenstvaRanijih;
-    }
-
-    /**
-     * Sets the value of the zahtevZaPriznavanjePrvenstvaRanijih property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih }
-     *     
-     */
-    public void setZahtevZaPriznavanjePrvenstvaRanijih(ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih value) {
-        this.zahtevZaPriznavanjePrvenstvaRanijih = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element ref="{http://www.ftn.uns.ac.rs/xml/tim26}adresa" minOccurs="0"/>
-     *         &lt;element name="Nacin_dostavljanja">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;enumeration value="ELEKTRONSKI"/>
-     *               &lt;enumeration value="FIZICKI"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "adresa",
-        "nacinDostavljanja"
-    })
-    public static class Dostavljanje {
-
-        @XmlElement(namespace = "http://www.ftn.uns.ac.rs/xml/tim26")
-        protected Adresa adresa;
-        @XmlElement(name = "Nacin_dostavljanja", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-        protected String nacinDostavljanja;
-
-        /**
-         * Gets the value of the adresa property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Adresa }
-         *     
-         */
-        public Adresa getAdresa() {
-            return adresa;
-        }
-
-        /**
-         * Sets the value of the adresa property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Adresa }
-         *     
-         */
-        public void setAdresa(Adresa value) {
-            this.adresa = value;
-        }
-
-        /**
-         * Gets the value of the nacinDostavljanja property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getNacinDostavljanja() {
-            return nacinDostavljanja;
-        }
-
-        /**
-         * Sets the value of the nacinDostavljanja property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setNacinDostavljanja(String value) {
-            this.nacinDostavljanja = value;
-        }
-
+    public void setPopunjavaPodnosilac(ObrazacPatenti.PopunjavaPodnosilac value) {
+        this.popunjavaPodnosilac = value;
     }
 
 
@@ -592,7 +357,57 @@ public class ObrazacPatenti {
      *             &lt;/complexContent>
      *           &lt;/complexType>
      *         &lt;/element>
-     *         &lt;element name="Podnosilac_prijave" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Podnosilac_prijave"/>
+     *         &lt;element name="Podnosilac_prijave" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Podnosilac_prijave" maxOccurs="unbounded"/>
+     *         &lt;element name="Pronalazac" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Pronalazac" maxOccurs="unbounded" minOccurs="0"/>
+     *         &lt;element name="Punomocnik" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Punomocnik"/>
+     *         &lt;element name="Dostavljanje">
+     *           &lt;complexType>
+     *             &lt;complexContent>
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                 &lt;sequence>
+     *                   &lt;element ref="{http://www.ftn.uns.ac.rs/xml/tim26}adresa" minOccurs="0"/>
+     *                   &lt;element name="Nacin_dostavljanja">
+     *                     &lt;simpleType>
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     *                         &lt;enumeration value="ELEKTRONSKI"/>
+     *                         &lt;enumeration value="FIZICKI"/>
+     *                       &lt;/restriction>
+     *                     &lt;/simpleType>
+     *                   &lt;/element>
+     *                 &lt;/sequence>
+     *               &lt;/restriction>
+     *             &lt;/complexContent>
+     *           &lt;/complexType>
+     *         &lt;/element>
+     *         &lt;element name="Osnovna_prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava" minOccurs="0"/>
+     *         &lt;element name="Zahtev_za_priznavanje_prvenstva_ranijih">
+     *           &lt;complexType>
+     *             &lt;complexContent>
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                 &lt;sequence>
+     *                   &lt;element name="Ranija_prijava" maxOccurs="unbounded" minOccurs="0">
+     *                     &lt;complexType>
+     *                       &lt;complexContent>
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                           &lt;sequence>
+     *                             &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
+     *                             &lt;element name="Oznaka_organizacije">
+     *                               &lt;simpleType>
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     *                                   &lt;pattern value="[A-Z]{2}"/>
+     *                                 &lt;/restriction>
+     *                               &lt;/simpleType>
+     *                             &lt;/element>
+     *                           &lt;/sequence>
+     *                         &lt;/restriction>
+     *                       &lt;/complexContent>
+     *                     &lt;/complexType>
+     *                   &lt;/element>
+     *                 &lt;/sequence>
+     *               &lt;/restriction>
+     *             &lt;/complexContent>
+     *           &lt;/complexType>
+     *         &lt;/element>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -604,14 +419,29 @@ public class ObrazacPatenti {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "nazivPronalazka",
-        "podnosilacPrijave"
+        "podnosilacPrijave",
+        "pronalazac",
+        "punomocnik",
+        "dostavljanje",
+        "osnovnaPrijava",
+        "zahtevZaPriznavanjePrvenstvaRanijih"
     })
     public static class PopunjavaPodnosilac {
 
         @XmlElement(name = "Naziv_pronalazka", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
         protected ObrazacPatenti.PopunjavaPodnosilac.NazivPronalazka nazivPronalazka;
         @XmlElement(name = "Podnosilac_prijave", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-        protected PodnosilacPrijave podnosilacPrijave;
+        protected List<PodnosilacPrijave> podnosilacPrijave;
+        @XmlElement(name = "Pronalazac", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
+        protected List<Pronalazac> pronalazac;
+        @XmlElement(name = "Punomocnik", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+        protected Punomocnik punomocnik;
+        @XmlElement(name = "Dostavljanje", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+        protected ObrazacPatenti.PopunjavaPodnosilac.Dostavljanje dostavljanje;
+        @XmlElement(name = "Osnovna_prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
+        protected Prijava osnovnaPrijava;
+        @XmlElement(name = "Zahtev_za_priznavanje_prvenstva_ranijih", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+        protected ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih zahtevZaPriznavanjePrvenstvaRanijih;
 
         /**
          * Gets the value of the nazivPronalazka property.
@@ -640,25 +470,245 @@ public class ObrazacPatenti {
         /**
          * Gets the value of the podnosilacPrijave property.
          * 
-         * @return
-         *     possible object is
-         *     {@link PodnosilacPrijave }
-         *     
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the podnosilacPrijave property.
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getPodnosilacPrijave().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link PodnosilacPrijave }
+         * 
+         * 
          */
-        public PodnosilacPrijave getPodnosilacPrijave() {
-            return podnosilacPrijave;
+        public List<PodnosilacPrijave> getPodnosilacPrijave() {
+            if (podnosilacPrijave == null) {
+                podnosilacPrijave = new ArrayList<PodnosilacPrijave>();
+            }
+            return this.podnosilacPrijave;
         }
 
         /**
-         * Sets the value of the podnosilacPrijave property.
+         * Gets the value of the pronalazac property.
+         * 
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the pronalazac property.
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getPronalazac().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link Pronalazac }
+         * 
+         * 
+         */
+        public List<Pronalazac> getPronalazac() {
+            if (pronalazac == null) {
+                pronalazac = new ArrayList<Pronalazac>();
+            }
+            return this.pronalazac;
+        }
+
+        /**
+         * Gets the value of the punomocnik property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Punomocnik }
+         *     
+         */
+        public Punomocnik getPunomocnik() {
+            return punomocnik;
+        }
+
+        /**
+         * Sets the value of the punomocnik property.
          * 
          * @param value
          *     allowed object is
-         *     {@link PodnosilacPrijave }
+         *     {@link Punomocnik }
          *     
          */
-        public void setPodnosilacPrijave(PodnosilacPrijave value) {
-            this.podnosilacPrijave = value;
+        public void setPunomocnik(Punomocnik value) {
+            this.punomocnik = value;
+        }
+
+        /**
+         * Gets the value of the dostavljanje property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link ObrazacPatenti.PopunjavaPodnosilac.Dostavljanje }
+         *     
+         */
+        public ObrazacPatenti.PopunjavaPodnosilac.Dostavljanje getDostavljanje() {
+            return dostavljanje;
+        }
+
+        /**
+         * Sets the value of the dostavljanje property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link ObrazacPatenti.PopunjavaPodnosilac.Dostavljanje }
+         *     
+         */
+        public void setDostavljanje(ObrazacPatenti.PopunjavaPodnosilac.Dostavljanje value) {
+            this.dostavljanje = value;
+        }
+
+        /**
+         * Gets the value of the osnovnaPrijava property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Prijava }
+         *     
+         */
+        public Prijava getOsnovnaPrijava() {
+            return osnovnaPrijava;
+        }
+
+        /**
+         * Sets the value of the osnovnaPrijava property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Prijava }
+         *     
+         */
+        public void setOsnovnaPrijava(Prijava value) {
+            this.osnovnaPrijava = value;
+        }
+
+        /**
+         * Gets the value of the zahtevZaPriznavanjePrvenstvaRanijih property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih }
+         *     
+         */
+        public ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih getZahtevZaPriznavanjePrvenstvaRanijih() {
+            return zahtevZaPriznavanjePrvenstvaRanijih;
+        }
+
+        /**
+         * Sets the value of the zahtevZaPriznavanjePrvenstvaRanijih property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih }
+         *     
+         */
+        public void setZahtevZaPriznavanjePrvenstvaRanijih(ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih value) {
+            this.zahtevZaPriznavanjePrvenstvaRanijih = value;
+        }
+
+
+        /**
+         * <p>Java class for anonymous complex type.
+         * 
+         * <p>The following schema fragment specifies the expected content contained within this class.
+         * 
+         * <pre>
+         * &lt;complexType>
+         *   &lt;complexContent>
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *       &lt;sequence>
+         *         &lt;element ref="{http://www.ftn.uns.ac.rs/xml/tim26}adresa" minOccurs="0"/>
+         *         &lt;element name="Nacin_dostavljanja">
+         *           &lt;simpleType>
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+         *               &lt;enumeration value="ELEKTRONSKI"/>
+         *               &lt;enumeration value="FIZICKI"/>
+         *             &lt;/restriction>
+         *           &lt;/simpleType>
+         *         &lt;/element>
+         *       &lt;/sequence>
+         *     &lt;/restriction>
+         *   &lt;/complexContent>
+         * &lt;/complexType>
+         * </pre>
+         * 
+         * 
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "", propOrder = {
+            "adresa",
+            "nacinDostavljanja"
+        })
+        public static class Dostavljanje {
+
+            @XmlElement(namespace = "http://www.ftn.uns.ac.rs/xml/tim26")
+            protected Adresa adresa;
+            @XmlElement(name = "Nacin_dostavljanja", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+            protected String nacinDostavljanja;
+
+            /**
+             * Gets the value of the adresa property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link Adresa }
+             *     
+             */
+            public Adresa getAdresa() {
+                return adresa;
+            }
+
+            /**
+             * Sets the value of the adresa property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link Adresa }
+             *     
+             */
+            public void setAdresa(Adresa value) {
+                this.adresa = value;
+            }
+
+            /**
+             * Gets the value of the nacinDostavljanja property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getNacinDostavljanja() {
+                return nacinDostavljanja;
+            }
+
+            /**
+             * Sets the value of the nacinDostavljanja property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setNacinDostavljanja(String value) {
+                this.nacinDostavljanja = value;
+            }
+
         }
 
 
@@ -756,6 +806,172 @@ public class ObrazacPatenti {
 
         }
 
+
+        /**
+         * <p>Java class for anonymous complex type.
+         * 
+         * <p>The following schema fragment specifies the expected content contained within this class.
+         * 
+         * <pre>
+         * &lt;complexType>
+         *   &lt;complexContent>
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *       &lt;sequence>
+         *         &lt;element name="Ranija_prijava" maxOccurs="unbounded" minOccurs="0">
+         *           &lt;complexType>
+         *             &lt;complexContent>
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *                 &lt;sequence>
+         *                   &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
+         *                   &lt;element name="Oznaka_organizacije">
+         *                     &lt;simpleType>
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+         *                         &lt;pattern value="[A-Z]{2}"/>
+         *                       &lt;/restriction>
+         *                     &lt;/simpleType>
+         *                   &lt;/element>
+         *                 &lt;/sequence>
+         *               &lt;/restriction>
+         *             &lt;/complexContent>
+         *           &lt;/complexType>
+         *         &lt;/element>
+         *       &lt;/sequence>
+         *     &lt;/restriction>
+         *   &lt;/complexContent>
+         * &lt;/complexType>
+         * </pre>
+         * 
+         * 
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "", propOrder = {
+            "ranijaPrijava"
+        })
+        public static class ZahtevZaPriznavanjePrvenstvaRanijih {
+
+            @XmlElement(name = "Ranija_prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
+            protected List<ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava> ranijaPrijava;
+
+            /**
+             * Gets the value of the ranijaPrijava property.
+             * 
+             * <p>
+             * This accessor method returns a reference to the live list,
+             * not a snapshot. Therefore any modification you make to the
+             * returned list will be present inside the JAXB object.
+             * This is why there is not a <CODE>set</CODE> method for the ranijaPrijava property.
+             * 
+             * <p>
+             * For example, to add a new item, do as follows:
+             * <pre>
+             *    getRanijaPrijava().add(newItem);
+             * </pre>
+             * 
+             * 
+             * <p>
+             * Objects of the following type(s) are allowed in the list
+             * {@link ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava }
+             * 
+             * 
+             */
+            public List<ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava> getRanijaPrijava() {
+                if (ranijaPrijava == null) {
+                    ranijaPrijava = new ArrayList<ObrazacPatenti.PopunjavaPodnosilac.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava>();
+                }
+                return this.ranijaPrijava;
+            }
+
+
+            /**
+             * <p>Java class for anonymous complex type.
+             * 
+             * <p>The following schema fragment specifies the expected content contained within this class.
+             * 
+             * <pre>
+             * &lt;complexType>
+             *   &lt;complexContent>
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+             *       &lt;sequence>
+             *         &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
+             *         &lt;element name="Oznaka_organizacije">
+             *           &lt;simpleType>
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+             *               &lt;pattern value="[A-Z]{2}"/>
+             *             &lt;/restriction>
+             *           &lt;/simpleType>
+             *         &lt;/element>
+             *       &lt;/sequence>
+             *     &lt;/restriction>
+             *   &lt;/complexContent>
+             * &lt;/complexType>
+             * </pre>
+             * 
+             * 
+             */
+            @XmlAccessorType(XmlAccessType.FIELD)
+            @XmlType(name = "", propOrder = {
+                "prijava",
+                "oznakaOrganizacije"
+            })
+            public static class RanijaPrijava {
+
+                @XmlElement(name = "Prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+                protected Prijava prijava;
+                @XmlElement(name = "Oznaka_organizacije", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
+                protected String oznakaOrganizacije;
+
+                /**
+                 * Gets the value of the prijava property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link Prijava }
+                 *     
+                 */
+                public Prijava getPrijava() {
+                    return prijava;
+                }
+
+                /**
+                 * Sets the value of the prijava property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link Prijava }
+                 *     
+                 */
+                public void setPrijava(Prijava value) {
+                    this.prijava = value;
+                }
+
+                /**
+                 * Gets the value of the oznakaOrganizacije property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getOznakaOrganizacije() {
+                    return oznakaOrganizacije;
+                }
+
+                /**
+                 * Sets the value of the oznakaOrganizacije property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setOznakaOrganizacije(String value) {
+                    this.oznakaOrganizacije = value;
+                }
+
+            }
+
+        }
+
     }
 
 
@@ -838,172 +1054,6 @@ public class ObrazacPatenti {
          */
         public void setPriznatiDatumPodnosenja(XMLGregorianCalendar value) {
             this.priznatiDatumPodnosenja = value;
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Ranija_prijava" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
-     *                   &lt;element name="Oznaka_organizacije">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;pattern value="[A-Z]{2}"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "ranijaPrijava"
-    })
-    public static class ZahtevZaPriznavanjePrvenstvaRanijih {
-
-        @XmlElement(name = "Ranija_prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1")
-        protected List<ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava> ranijaPrijava;
-
-        /**
-         * Gets the value of the ranijaPrijava property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the ranijaPrijava property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getRanijaPrijava().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava }
-         * 
-         * 
-         */
-        public List<ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava> getRanijaPrijava() {
-            if (ranijaPrijava == null) {
-                ranijaPrijava = new ArrayList<ObrazacPatenti.ZahtevZaPriznavanjePrvenstvaRanijih.RanijaPrijava>();
-            }
-            return this.ranijaPrijava;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="Prijava" type="{http://www.ftn.uns.ac.rs/xml/tim26/p1}Prijava"/>
-         *         &lt;element name="Oznaka_organizacije">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;pattern value="[A-Z]{2}"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "prijava",
-            "oznakaOrganizacije"
-        })
-        public static class RanijaPrijava {
-
-            @XmlElement(name = "Prijava", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-            protected Prijava prijava;
-            @XmlElement(name = "Oznaka_organizacije", namespace = "http://www.ftn.uns.ac.rs/xml/tim26/p1", required = true)
-            protected String oznakaOrganizacije;
-
-            /**
-             * Gets the value of the prijava property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Prijava }
-             *     
-             */
-            public Prijava getPrijava() {
-                return prijava;
-            }
-
-            /**
-             * Sets the value of the prijava property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Prijava }
-             *     
-             */
-            public void setPrijava(Prijava value) {
-                this.prijava = value;
-            }
-
-            /**
-             * Gets the value of the oznakaOrganizacije property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getOznakaOrganizacije() {
-                return oznakaOrganizacije;
-            }
-
-            /**
-             * Sets the value of the oznakaOrganizacije property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setOznakaOrganizacije(String value) {
-                this.oznakaOrganizacije = value;
-            }
-
         }
 
     }

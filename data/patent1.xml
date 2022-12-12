@@ -16,12 +16,12 @@
       <tim:drzava>string</tim:drzava>
     </tim:adresa>
   </p1:Informacije_institucije>
-  <!--1 or more repetitions:-->
   <p1:Popunjava_podnosilac>
     <p1:Naziv_pronalazka>
       <p1:Naziv_na_srpskom>string</p1:Naziv_na_srpskom>
       <p1:Naziv_na_engleskom>string</p1:Naziv_na_engleskom>
     </p1:Naziv_pronalazka>
+    <!--1 or more repetitions:-->
     <p1:Podnosilac_prijave>
       <p1:Podnosilac_je_pronalazac>true</p1:Podnosilac_je_pronalazac>
       <!--You have a CHOICE of the next 2 items at this level-->
@@ -34,8 +34,8 @@
           <tim:drzava>string</tim:drzava>
         </tim:adresa>
         <tim:podaci_o_licu>
-          <tim:telefon>324-432-32-32</tim:telefon>
-          <tim:email>str@in.g</tim:email>
+          <tim:telefon>323-643-43-43</tim:telefon>
+          <tim:email>neka@gsd.ds</tim:email>
           <!--Optional:-->
           <tim:faks>string</tim:faks>
         </tim:podaci_o_licu>
@@ -43,12 +43,30 @@
         <tim:prezime>string</tim:prezime>
         <tim:drzavljanstvo>string</tim:drzavljanstvo>
       </p1:Fizicko_lice>
+
     </p1:Podnosilac_prijave>
-  </p1:Popunjava_podnosilac>
-  <!--Zero or more repetitions:-->
-  <p1:Pronalazac>
-    <p1:Pronalazac_zeli_biti_naveden>false</p1:Pronalazac_zeli_biti_naveden>
-    <p1:Fizicko_lice>
+    <!--Zero or more repetitions:-->
+    <p1:Pronalazac>
+      <p1:Pronalazac_zeli_biti_naveden>false</p1:Pronalazac_zeli_biti_naveden>
+      <p1:Fizicko_lice>
+        <tim:adresa>
+          <tim:ulica>string</tim:ulica>
+          <tim:broj>string</tim:broj>
+          <tim:postanski_broj>11000</tim:postanski_broj>
+          <tim:mesto>string</tim:mesto>
+          <tim:drzava>string</tim:drzava>
+        </tim:adresa>
+        <tim:podaci_o_licu>
+          <tim:telefon>323-643-43-43</tim:telefon>
+          <tim:email>neka@gsd.ds</tim:email>
+          <!--Optional:-->
+          <tim:faks>string</tim:faks>
+        </tim:podaci_o_licu>
+        <tim:ime>string</tim:ime>
+        <tim:prezime>string</tim:prezime>
+      </p1:Fizicko_lice>
+    </p1:Pronalazac>
+    <p1:Punomocnik>
       <tim:adresa>
         <tim:ulica>string</tim:ulica>
         <tim:broj>string</tim:broj>
@@ -57,57 +75,40 @@
         <tim:drzava>string</tim:drzava>
       </tim:adresa>
       <tim:podaci_o_licu>
-        <tim:telefon>432-432-53-56</tim:telefon>
-        <tim:email>st@ri.ng</tim:email>
+        <tim:telefon>323-643-43-43</tim:telefon>
+        <tim:email>neka@gsd.ds</tim:email>
         <!--Optional:-->
         <tim:faks>string</tim:faks>
       </tim:podaci_o_licu>
-      <tim:ime>string</tim:ime>
-      <tim:prezime>string</tim:prezime>
-    </p1:Fizicko_lice>
-  </p1:Pronalazac>
-  <p1:Punomocnik>
-    <tim:adresa>
-      <tim:ulica>string</tim:ulica>
-      <tim:broj>string</tim:broj>
-      <tim:postanski_broj>11000</tim:postanski_broj>
-      <tim:mesto>string</tim:mesto>
-      <tim:drzava>string</tim:drzava>
-    </tim:adresa>
-    <tim:podaci_o_licu>
-      <tim:telefon>344-646-43-64</tim:telefon>
-      <tim:email>neka@nes.com</tim:email>
+      <p1:Punomocnik_za_zastupanje>false</p1:Punomocnik_za_zastupanje>
+      <p1:Punmocnik_za_prijem_pismena>false</p1:Punmocnik_za_prijem_pismena>
+      <p1:zajednicki_predstavnik>true</p1:zajednicki_predstavnik>
+    </p1:Punomocnik>
+    <p1:Dostavljanje>
       <!--Optional:-->
-      <tim:faks>string</tim:faks>
-    </tim:podaci_o_licu>
-    <p1:Punomocnik_za_zastupanje>false</p1:Punomocnik_za_zastupanje>
-    <p1:Punmocnik_za_prijem_pismena>false</p1:Punmocnik_za_prijem_pismena>
-    <p1:zajednicki_predstavnik>true</p1:zajednicki_predstavnik>
-  </p1:Punomocnik>
-  <p1:Dostavljanje>
+      <tim:adresa>
+        <tim:ulica>string</tim:ulica>
+        <tim:broj>string</tim:broj>
+        <tim:postanski_broj>11000</tim:postanski_broj>
+        <tim:mesto>string</tim:mesto>
+        <tim:drzava>string</tim:drzava>
+      </tim:adresa>
+      <p1:Nacin_dostavljanja>ELEKTRONSKI</p1:Nacin_dostavljanja>
+    </p1:Dostavljanje>
     <!--Optional:-->
-    <tim:adresa>
-      <tim:ulica>string</tim:ulica>
-      <tim:broj>string</tim:broj>
-      <tim:postanski_broj>11000</tim:postanski_broj>
-      <tim:mesto>string</tim:mesto>
-      <tim:drzava>string</tim:drzava>
-    </tim:adresa>
-    <p1:Nacin_dostavljanja>ELEKTRONSKI</p1:Nacin_dostavljanja>
-  </p1:Dostavljanje>
-  <!--Optional:-->
-  <p1:Osnovna_prijava>
-    <p1:Datum_podnosenja_prijave>2003-08-09+02:00</p1:Datum_podnosenja_prijave>
-    <p1:Broj_prijave>201</p1:Broj_prijave>
-  </p1:Osnovna_prijava>
-  <p1:Zahtev_za_priznavanje_prvenstva_ranijih>
-    <!--Zero or more repetitions:-->
-    <p1:Ranija_prijava>
-      <p1:Prijava>
-        <p1:Datum_podnosenja_prijave>2012-09-13+02:00</p1:Datum_podnosenja_prijave>
-        <p1:Broj_prijave>201</p1:Broj_prijave>
-      </p1:Prijava>
-      <p1:Oznaka_organizacije>SE</p1:Oznaka_organizacije>
-    </p1:Ranija_prijava>
-  </p1:Zahtev_za_priznavanje_prvenstva_ranijih>
+    <p1:Osnovna_prijava>
+      <p1:Datum_podnosenja_prijave>2003-08-09+02:00</p1:Datum_podnosenja_prijave>
+      <p1:Broj_prijave>201</p1:Broj_prijave>
+    </p1:Osnovna_prijava>
+    <p1:Zahtev_za_priznavanje_prvenstva_ranijih>
+      <!--Zero or more repetitions:-->
+      <p1:Ranija_prijava>
+        <p1:Prijava>
+          <p1:Datum_podnosenja_prijave>2012-09-13+02:00</p1:Datum_podnosenja_prijave>
+          <p1:Broj_prijave>201</p1:Broj_prijave>
+        </p1:Prijava>
+        <p1:Oznaka_organizacije>DS</p1:Oznaka_organizacije>
+      </p1:Ranija_prijava>
+    </p1:Zahtev_za_priznavanje_prvenstva_ranijih>
+  </p1:Popunjava_podnosilac>
 </p1:Obrazac_patenti>

@@ -61,12 +61,4 @@ public class PravnoLice
         this.naziv = value;
     }
 
-    @Override
-    public String toString() {
-        return "PravnoLice{" +
-                "naziv='" + naziv + '\'' +
-                ", adresa=" + adresa +
-                ", podaciOLicu=" + podaciOLicu +
-                '}';
-    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<zig:Obrazac_zigovi xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26" xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1" xmlns:p1="http://www.ftn.uns.ac.rs/xml/tim26/p1" xmlns:zig="http://www.ftn.uns.ac.rs/xml/tim26/zig" zig:Broj_prijave_ziga="Ž-324\22" zig:Datum_podnosenja="2022-09-20">
+<zig:Obrazac_zigovi xmlns:p1="http://www.ftn.uns.ac.rs/xml/tim26/p1" xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26" xmlns:a1="http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1" xmlns:zig="http://www.ftn.uns.ac.rs/xml/tim26/zig" zig:Broj_prijave_ziga="Ž-324\22" zig:Datum_podnosenja="2022-09-20">
     <zig:podnosilac_prijave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tim26:Fizicko_lice">
         <tim26:adresa>
             <tim26:ulica>Neka Ulica</tim26:ulica>

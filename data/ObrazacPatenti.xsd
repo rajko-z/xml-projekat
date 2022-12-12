@@ -29,7 +29,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Popunjava_podnosilac" maxOccurs="unbounded">
+                <xs:element name="Popunjava_podnosilac" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Naziv_pronalazka">
@@ -52,42 +52,44 @@
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="Podnosilac_prijave" type="p1:Podnosilac_prijave"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Pronalazac"
-                    type="p1:Pronalazac"/>
-                <xs:element name="Punomocnik" type="p1:Punomocnik"/>
-                <xs:element name="Dostavljanje">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element minOccurs="0" ref="tim26:adresa"/>
-                            <xs:element name="Nacin_dostavljanja">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="ELEKTRONSKI"/>
-                                        <xs:enumeration value="FIZICKI"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element minOccurs="0" name="Osnovna_prijava" type="p1:Prijava"/>
-                <xs:element minOccurs="1" name="Zahtev_za_priznavanje_prvenstva_ranijih">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element maxOccurs="unbounded" minOccurs="0" name="Ranija_prijava">
+                            <xs:element name="Podnosilac_prijave" type="p1:Podnosilac_prijave"
+                                maxOccurs="unbounded"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="Pronalazac"
+                                type="p1:Pronalazac"/>
+                            <xs:element name="Punomocnik" type="p1:Punomocnik"/>
+                            <xs:element name="Dostavljanje">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="Prijava" type="p1:Prijava"/>
-                                        <xs:element name="Oznaka_organizacije">
+                                        <xs:element minOccurs="0" ref="tim26:adresa"/>
+                                        <xs:element name="Nacin_dostavljanja">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                  <xs:pattern value="[A-Z]{2}"/>
+                                                  <xs:enumeration value="ELEKTRONSKI"/>
+                                                  <xs:enumeration value="FIZICKI"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Osnovna_prijava" type="p1:Prijava"/>
+                            <xs:element minOccurs="1" name="Zahtev_za_priznavanje_prvenstva_ranijih">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0"
+                                            name="Ranija_prijava">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Prijava" type="p1:Prijava"/>
+                                                  <xs:element name="Oznaka_organizacije">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:pattern value="[A-Z]{2}"/>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
