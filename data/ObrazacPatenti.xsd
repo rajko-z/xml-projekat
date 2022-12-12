@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:tim26="http://www.ftn.uns.ac.rs/xml/tim26">
+    <xs:import namespace="http://www.ftn.uns.ac.rs/xml/tim26" schemaLocation="Zajednicko.xsd"/>
+    <xs:element name="Obrazac_patenti">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Popunjava_zavod">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Prijava" type="Prijava_T"/>
+                            <xs:element name="Priznati_datum_podnosenja" type="xs:date"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Informacije_institucije">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Naziv">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Adresa" type="tim26:Adresa"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Popunjava_podnosilac" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Naziv_pronalazka">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Naziv_na_srpskom">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Naziv_na_engleskom">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Podnosilac_prijave" type="Podnosilac_projave_T"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Pronalazac"
+                    type="Pronalazac_T"/>
+                <xs:element name="Punomocnik" type="Punomocnik_T"/>
+                <xs:element name="Dostavljanje">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Adresa_za_dostavljanje"
+                                type="tim26:Adresa"/>
+                            <xs:element name="Nacin_dostavljanja">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="ELEKTRONSKI"/>
+                                        <xs:enumeration value="FIZICKI"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="Osnovna_prijava" type="Prijava_T"/>
+                <xs:element minOccurs="1" name="Zahtev_za_priznavanje_prvenstva_ranijih">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="Ranija_prijava">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Prijava" type="Prijava_T"/>
+                                        <xs:element name="Oznaka_organizacije">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:pattern value="[A-Z]{2}"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="Podnosilac_projave_T">
+        <xs:sequence>
+            <xs:element name="Podnosilac_je_pronalazac" type="xs:boolean"/>
+            <xs:choice>
+                <xs:element name="Fizicko_lice" type="tim26:Fizicko_lice_sa_drzavljanstvom"/>
+                <xs:element name="Pravno_lice" type="tim26:Pravno_lice"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Pronalazac_T">
+        <xs:sequence>
+            <xs:element name="Pronalazac_zeli_biti_naveden" type="xs:boolean"/>
+            <xs:element name="Fizicko_lice" type="tim26:Fizicko_lice"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Punomocnik_T">
+        <xs:sequence>
+            <xs:element name="Punomocnik_za_zastupanje" type="xs:boolean"/>
+            <xs:element name="Punomocnik_za_prijem_pismena" type="xs:boolean"/>
+            <xs:element name="Zajednicki_predstavnik" type="xs:boolean"/>
+            <xs:element name="Podaci_punomocnika">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="Fizicko_lice" type="tim26:Fizicko_lice"/>
+                        <xs:element name="Pravno_lice" type="tim26:Pravno_lice"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Prijava_T">
+        <xs:sequence>
+            <xs:element name="Datum_podnosenja_prijave" type="xs:date"/>
+            <xs:element name="Broj_prijave" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

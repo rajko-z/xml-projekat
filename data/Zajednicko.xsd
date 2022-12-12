@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="http://www.ftn.uns.ac.rs/xml/tim26"
-    xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
-    
+    targetNamespace="http://www.ftn.uns.ac.rs/xml/tim26" xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+
     <xs:element name="adresa">
         <xs:complexType>
             <xs:sequence>
@@ -21,7 +20,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:complexType name="Podaci_o_licu">
         <xs:sequence>
             <xs:element name="telefon">
@@ -41,15 +40,15 @@
             <xs:element name="faks" type="Str255" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
-    
+
+
     <xs:complexType abstract="true" name="Lice">
         <xs:sequence>
             <xs:element ref="adresa"/>
             <xs:element name="podaci_o_licu" type="Podaci_o_licu"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="Fizicko_lice">
         <xs:complexContent>
             <xs:extension base="Lice">
@@ -60,7 +59,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="Fizicko_lice_sa_drzavljanstvom">
         <xs:complexContent>
             <xs:extension base="Fizicko_lice">
@@ -70,7 +69,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="Pravno_lice">
         <xs:complexContent>
             <xs:extension base="Lice">
@@ -80,20 +79,25 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-    
+
+
     <xs:simpleType name="Str255">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="255"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:complexType name="Prilog">
         <xs:sequence>
             <xs:element name="postoji" type="xs:boolean"/>
             <xs:element name="putanja_do_fajla" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-    
+
+    <xs:complexType name="Adresa">
+        <xs:sequence>
+            <xs:element ref="adresa"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

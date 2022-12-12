@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Obrazac_patenti [
+        <!ELEMENT Obrazac_patenti (Popunjava_zavod|Informacije_institucije|Popunjava_podnosilac|Punomocnik|Dostavljanje|Zahtev_za_priznavanje_prvenstva_ranijih)*>
+        <!ATTLIST Obrazac_patenti
+                xmlns:xsi CDATA #REQUIRED
+                xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+        <!ELEMENT Popunjava_zavod (Prijava|Priznati_datum_podnosenja)*>
+        <!ELEMENT Prijava (Datum_podnosenja_prijave|Broj_prijave)*>
+        <!ELEMENT Datum_podnosenja_prijave (#PCDATA)>
+        <!ELEMENT Broj_prijave (#PCDATA)>
+        <!ELEMENT Priznati_datum_podnosenja (#PCDATA)>
+        <!ELEMENT Informacije_institucije (Naziv|Adresa)*>
+        <!ELEMENT Naziv (#PCDATA)>
+        <!ELEMENT Adresa (adresa)*>
+        <!ELEMENT adresa (ulica|broj|postanski_broj|mesto|drzava)*>
+        <!ATTLIST adresa
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT ulica (#PCDATA)>
+        <!ELEMENT broj (#PCDATA)>
+        <!ELEMENT postanski_broj (#PCDATA)>
+        <!ELEMENT mesto (#PCDATA)>
+        <!ELEMENT drzava (#PCDATA)>
+        <!ELEMENT Popunjava_podnosilac (Naziv_pronalazka|Podnosilac_prijave)*>
+        <!ELEMENT Naziv_pronalazka (Naziv_na_srpskom|Naziv_na_engleskom)*>
+        <!ELEMENT Naziv_na_srpskom (#PCDATA)>
+        <!ELEMENT Naziv_na_engleskom (#PCDATA)>
+        <!ELEMENT Podnosilac_prijave (Podnosilac_je_pronalazac|Fizicko_lice)*>
+        <!ELEMENT Podnosilac_je_pronalazac (#PCDATA)>
+        <!ELEMENT Fizicko_lice (adresa|podaci_o_licu|ime|prezime|drzavljanstvo)*>
+        <!ELEMENT podaci_o_licu (telefon|email)*>
+        <!ATTLIST podaci_o_licu
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT telefon (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT ime (#PCDATA)>
+        <!ATTLIST ime
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT prezime (#PCDATA)>
+        <!ATTLIST prezime
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT drzavljanstvo (#PCDATA)>
+        <!ATTLIST drzavljanstvo
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT Punomocnik (Punomocnik_za_zastupanje|Punomocnik_za_prijem_pismena|Zajednicki_predstavnik|Podaci_punomocnika)*>
+        <!ELEMENT Punomocnik_za_zastupanje (#PCDATA)>
+        <!ELEMENT Punomocnik_za_prijem_pismena (#PCDATA)>
+        <!ELEMENT Zajednicki_predstavnik (#PCDATA)>
+        <!ELEMENT Podaci_punomocnika (Pravno_lice)*>
+        <!ELEMENT Pravno_lice (adresa|podaci_o_licu|naziv)*>
+        <!ELEMENT naziv (#PCDATA)>
+        <!ATTLIST naziv
+                xmlns CDATA #REQUIRED>
+        <!ELEMENT Dostavljanje (Nacin_dostavljanja)*>
+        <!ELEMENT Nacin_dostavljanja (#PCDATA)>
+        <!ELEMENT Zahtev_za_priznavanje_prvenstva_ranijih (#PCDATA)>
+        ]>
+<Obrazac_patenti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ObrazacPatenti.xsd">
+    <Popunjava_zavod>
+        <Prijava>
+            <Datum_podnosenja_prijave>2002-09-24</Datum_podnosenja_prijave>
+            <Broj_prijave>242</Broj_prijave>
+        </Prijava>
+        <Priznati_datum_podnosenja>2002-09-24</Priznati_datum_podnosenja>
+    </Popunjava_zavod>
+    <Informacije_institucije>
+        <Naziv>Zavod</Naziv>
+        <Adresa>
+            <adresa xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+                <ulica>Vojvode Stepe</ulica>
+                <broj>32</broj>
+                <postanski_broj>22320</postanski_broj>
+                <mesto>Indjija</mesto>
+                <drzava>Srbija</drzava>
+            </adresa>
+        </Adresa>
+    </Informacije_institucije>
+    <Popunjava_podnosilac>
+        <Naziv_pronalazka>
+            <Naziv_na_srpskom>kamen</Naziv_na_srpskom>
+            <Naziv_na_engleskom>stone</Naziv_na_engleskom>
+        </Naziv_pronalazka>
+        <Podnosilac_prijave>
+            <Podnosilac_je_pronalazac>true</Podnosilac_je_pronalazac>
+            <Fizicko_lice>
+                <adresa xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+                    <ulica>Jovana Cvijica</ulica>
+                    <broj>19</broj>
+                    <postanski_broj>15000</postanski_broj>
+                    <mesto>Sabac</mesto>
+                    <drzava>Srbija</drzava>
+                </adresa>
+                <podaci_o_licu xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+                    <telefon>024-121-52-52</telefon>
+                    <email>neka@gmail.com</email>
+                </podaci_o_licu>
+                <ime xmlns="http://www.ftn.uns.ac.rs/xml/tim26">bojan</ime>
+                <prezime xmlns="http://www.ftn.uns.ac.rs/xml/tim26">vasic</prezime>
+                <drzavljanstvo xmlns="http://www.ftn.uns.ac.rs/xml/tim26">Srpsko</drzavljanstvo>
+            </Fizicko_lice>
+        </Podnosilac_prijave>
+    </Popunjava_podnosilac>
+    <Punomocnik>
+        <Punomocnik_za_zastupanje>false</Punomocnik_za_zastupanje>
+        <Punomocnik_za_prijem_pismena>false</Punomocnik_za_prijem_pismena>
+        <Zajednicki_predstavnik>false</Zajednicki_predstavnik>
+        <Podaci_punomocnika>
+            <Pravno_lice>
+                <adresa xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+                    <ulica>neka</ulica>
+                    <broj>32</broj>
+                    <postanski_broj>34234</postanski_broj>
+                    <mesto>neko</mesto>
+                    <drzava>neka</drzava>
+                </adresa>
+                <podaci_o_licu xmlns="http://www.ftn.uns.ac.rs/xml/tim26">
+                    <telefon>352-363-32-32</telefon>
+                    <email>nema@nema.com</email>
+                </podaci_o_licu>
+                <naziv xmlns="http://www.ftn.uns.ac.rs/xml/tim26">firmetina</naziv>
+            </Pravno_lice>
+        </Podaci_punomocnika>
+    </Punomocnik>
+    <Dostavljanje>
+        <Nacin_dostavljanja>ELEKTRONSKI</Nacin_dostavljanja>
+    </Dostavljanje>
+    <Zahtev_za_priznavanje_prvenstva_ranijih></Zahtev_za_priznavanje_prvenstva_ranijih>
+</Obrazac_patenti>
