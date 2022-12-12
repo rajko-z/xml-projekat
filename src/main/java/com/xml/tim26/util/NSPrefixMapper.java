@@ -25,6 +25,8 @@ public class NSPrefixMapper extends NamespacePrefixMapper {
         addMapping("http://www.ftn.uns.ac.rs/xml/tim26/obrazacA1", "a1");
         addMapping("http://www.w3.org/2001/XMLSchema-instance", "xsi");
         addMapping("http://java.sun.com/xml/ns/jaxb", "jaxb");
+        addMapping("http://www.ftn.uns.ac.rs/xml/tim26/p1", "p1");
+
     }
 
     public void addMapping(String uri, String prefix){
